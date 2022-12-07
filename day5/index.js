@@ -1,10 +1,8 @@
-
-
 (async function() { 
-const load = require('../loader')
 
+const load = require('../loader')
 const INPUT = await load(5)
-console.log(INPUT)
+
 const moves = INPUT.split('move ').map((x) => { 
     let a = x.replaceAll(' ', '').replaceAll('\n', '')
     let arr = a.split('from')
