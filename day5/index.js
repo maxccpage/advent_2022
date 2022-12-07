@@ -27,14 +27,16 @@ const board =  {
 }
 
 for (let move of moves) { 
-    let values = []
 
-    for (let i = board[move.start]; i < move.quantity; i++) {  
-        
-        let item = board[move.start].pop();
-        board[move.end].push(item)
+    // PT 2 
+    let crates = board[move.start].splice(board[move.start].length - move.quantity, move.quantity)
+    board[move.end] = [...board[move.end], ...crates]
 
-    }
+    // PT 1
+    // for (let i = board[move.start]; i < move.quantity; i++) {  
+    //     let item = board[move.start].pop();
+    //     board[move.end].push(item)
+    // }
 
 }
 
